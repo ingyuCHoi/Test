@@ -21,7 +21,7 @@ public class GetMembersTest {
     public static void main(String[] args) throws Exception {
  
         MemberDAO dao = MemberDAOImpl.getInstance();
-        MemberVO member = dao.getMember("java3");
+        MemberVO member = dao.getMember("java1");
         // System.out.println(member.toString());
         System.out.println(member);
     } //

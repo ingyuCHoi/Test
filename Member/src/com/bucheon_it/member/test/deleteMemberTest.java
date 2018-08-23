@@ -18,7 +18,7 @@ public class deleteMemberTest {
 	 */
 	public static void main(String[] args) throws Exception {
 		MemberDAO dao = MemberDAOImpl.getInstance();
-		dao.deleteMember("java");
+		dao.deleteMember("java3");
 
 	}
 

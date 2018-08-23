@@ -58,7 +58,7 @@ public final class MemberDAOImpl implements MemberDAO {
 	                pstmt.setString(8, member.getZip());
 	                pstmt.setString(9, member.getAddress());
 	                pstmt.setDate(10, member.getBirthday());
-	                pstmt.setDate(11, member.getJoindate());
+	                pstmt.setString(11, member.getJoindate());
 	                // 6. SQL 구문 실행/메시징
 	                if (pstmt.executeUpdate() == 1) {
 	                    System.out.println("회원 정보 저장에 성공하였습니다.");
@@ -90,17 +90,17 @@ public final class MemberDAOImpl implements MemberDAO {
 	       
 	        // 3. SQL 구문
 	        String sql = "UPDATE member1_tbl SET "
-	                   + "password=?,"
-	                   + "name=?,"
-	                   + "gender=?,"
-	                   + "email=?,"
-	                   + "mobile=?,"
-	                   + "phone=?,"
-	                   + "zip=?,"
-	                   + "address=?,"
-	                   + "birthday=?,"
-	                   + "joindate=?,"
-	                   + "WHERE id=?";
+	                   + " password = ?,"
+	                   + " name = ?,"
+	                   + " gender = ?,"
+	                   + " email = ?,"
+	                   + " mobile = ?,"
+	                   + " phone = ?,"
+	                   + " zip = ?,"
+	                   + " address = ?,"
+	                   + " birthday = ?,"
+	                   + " joindate = ?,"
+	                   + " WHERE id = ?";
 	        
 	       StringBuilder sb = new StringBuilder();
 	       sb.append("UPDATE member1_tbl SET ");
@@ -129,7 +129,7 @@ public final class MemberDAOImpl implements MemberDAO {
 	                pstmt.setString(7, member.getZip());
 	                pstmt.setString(8, member.getAddress());
 	                pstmt.setDate(9, member.getBirthday());
-	                pstmt.setDate(10, member.getJoindate());
+	                pstmt.setString(10, member.getJoindate());
 	                pstmt.setString(11, member.getId());
 	                // 6. SQL 구문 실행/메시징
 	                if (pstmt.executeUpdate() == 1) {
@@ -183,7 +183,7 @@ public final class MemberDAOImpl implements MemberDAO {
 	                member.setZip(rs.getString("zip"));
 	                member.setAddress(rs.getString("address"));
 	                member.setBirthday(rs.getDate("birthday"));
-	                member.setJoindate(rs.getDate("joindate"));
+	                member.setJoindate(rs.getString("joindate"));
 	               
 	                members.add(member);
 	            } //
@@ -230,7 +230,7 @@ public final class MemberDAOImpl implements MemberDAO {
                 member.setZip(rs.getString("zip"));
                 member.setAddress(rs.getString("address"));
                 member.setBirthday(rs.getDate("birthday"));
-                member.setJoindate(rs.getDate("joindate"));
+                member.setJoindate(rs.getString("joindate"));
             } //
            
         } catch (SQLException e) {
@@ -335,7 +335,7 @@ public final class MemberDAOImpl implements MemberDAO {
                 member.setZip(rs.getString("zip"));
                 member.setAddress(rs.getString("address"));
                 member.setBirthday(rs.getDate("birthday"));
-                member.setJoindate(rs.getDate("joindate"));
+                member.setJoindate(rs.getString("joindate"));
                 members[count++] = member;
                
             } while (rs.previous()); //

@@ -20,7 +20,7 @@ public class MemberVO {
 	private String zip;
 	private String address;
 	private Date birthday;
-	private Date joindate;
+	private String joindate;
 	
 	public MemberVO() {} // 회원정보 초기화 
 
@@ -38,7 +38,7 @@ public class MemberVO {
 	 * @param joindate
 	 */
 	public MemberVO(String id, String pw, String name, char gender, String email, String mobile, String phone, String zip,
-			String address, Date birthday, Date joindate) {
+			String address, Date birthday, String joindate) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
@@ -195,14 +195,14 @@ public class MemberVO {
 	/**
 	 * @return the joindate
 	 */
-	public Date getJoindate() {
+	public String getJoindate() {
 		return joindate;
 	}
 
 	/**
 	 * @param joindate the joindate to set
 	 */
-	public void setJoindate(Date joindate) {
+	public void setJoindate(String joindate) {
 		this.joindate = joindate;
 	}
 
@@ -301,7 +301,7 @@ public class MemberVO {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("MemberVO [아이디=").append(id).append(", 비밀번호=").append(pw).append(", 이름=").append(name)
+		builder.append("회원정보 [아이디=").append(id).append(", 비밀번호=").append(pw).append(", 이름=").append(name)
 				.append(", 성별=").append(gender).append(", 메일 주소=").append(email).append(", 연락처1=").append(mobile)
 				.append(", 연락처2=").append(phone).append(", 도로명 우편번호=").append(zip).append(", 도로명 주소=").append(address)
 				.append(", 생년 월일=").append(birthday).append(", 가입일=").append(joindate).append("]");
